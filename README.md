@@ -5,8 +5,11 @@ This repository hosts a Flask-based web application for image processing. It pro
 ![Screenshot (578)](https://github.com/Binod231/Image-Editor/assets/110877218/cd6b3e4c-dbc7-4043-92c3-424e3dc1c122)
 
 ![Screenshot (574)](https://github.com/Binod231/Image-Editor/assets/110877218/db8d3d42-64cb-41c6-b318-d9ff48bc1b74)
+
 change jpg to png    
+
 ![Screenshot (576)](https://github.com/Binod231/Image-Editor/assets/110877218/031c91be-6a24-43da-9596-1a2458bce1c0)
+
 change to grayspace
 ![Screenshot (577)](https://github.com/Binod231/Image-Editor/assets/110877218/fee3c1fd-4348-4e22-841f-952502c287c8)
 ![Screenshot (579)](https://github.com/Binod231/Image-Editor/assets/110877218/85b98123-857a-4746-9edb-f836f1324cf9)
