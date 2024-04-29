@@ -1,0 +1,33 @@
+body {
+    background-image: url('https://source.unsplash.com/random/1920x1080');
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+.container {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.form-control {
+    background-color: rgba(255, 255, 255, 0.5);
+    color: black;
+}
+
+.navbar-brand {
+    font-size: larger;
+}
+
+.navbar-nav .nav-link {
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0 10px;
+}
+
+.navbar-nav .nav-link:hover {
+    color: yellow;
+}
