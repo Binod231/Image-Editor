@@ -13,10 +13,11 @@ ALLOWED_EXTENSIONS = {'png', 'webp', 'jpg', 'jpeg', 'gif'}
 MAX_FILE_SIZE = 16 * 1024 * 1024  # 16MB
 
 app = Flask(__name__)
-app.secret_key = os.urandom(24)
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-app.config['PROCESSED_FOLDER'] = PROCESSED_FOLDER
-app.config['MAX_CONTENT_LENGTH'] = MAX_FILE_SIZE
+# In app.py, update these lines:
+app.secret_key = os.environ.get('SECRET_KEY', os.urandom(24))  # Fallback for local dev
+app.config['UPLOAD_FOLDER'] = os.environ.get('UPLOAD_FOLDER', 'uploads')
+app.config['PROCESSED_FOLDER'] = os.environ.get('PROCESSED_FOLDER', 'static/processed')
+app.config['MAX_CONTENT_LENGTH'] = int(os.environ.get('MAX_FILE_SIZE', 16 * 1024 * 1024))
 
 # Ensure directories exist
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
@@ -249,4 +250,5 @@ def signup():
 
 
 if __name__ == "__main__":
-    app.run(debug=True, port=5001)
+    port = int(os.environ.get("PORT", 5001))  
+    app.run(host='0.0.0.0', port=port)
