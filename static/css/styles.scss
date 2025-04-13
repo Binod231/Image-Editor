@@ -1,0 +1,334 @@
+
+:root {
+    --gradient-start: #0f2027;
+    --gradient-mid: #203a43;
+    --gradient-end: #2c5364;
+    --primary-accent: #00c9a7;
+    --secondary-accent: #4facfe;
+}
+
+body {
+    background: linear-gradient(to right, var(--gradient-start), var(--gradient-mid), var(--gradient-end));
+    background-attachment: fixed;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    animation: fadeInBody 1.2s ease-in;
+    padding-bottom: 2rem;
+
+    
+}
+
+@keyframes fadeInBody {
+    0% { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.container {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    transform-style: preserve-3d;
+    transition: all 0.3s ease;
+    margin-top: 2rem;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.container:hover {
+    transform: translateY(-5px) scale(1.01);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.9);
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 1.5rem;
+        border-radius: 15px;
+        margin-top: 1rem;
+    }
+}
+
+
+
+.btn-success {
+    background-color: var(--primary-accent);
+    border: none;
+    border-radius: 50px;
+    padding: 0.75rem 2rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(72, 239, 255, 0.3);
+    width: 100%;
+    max-width: 200px;
+    margin-top: 1rem;
+}
+
+.btn-success:hover {
+    background-color: #00b89c;
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 201, 167, 0.6);
+}
+
+.navbar {
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.4s ease;
+    padding: 0.8rem 1rem;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: linear-gradient(to right, #00f2fe, var(--secondary-accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 576px) {
+    .navbar-brand {
+        font-size: 1.3rem;
+    }
+}
+
+.navbar-nav .nav-link {
+    color: white;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+}
+
+.nav-link:hover {
+    transform: translateY(-2px);
+    color: #00e6e6;
+}
+
+h1 {
+    background: linear-gradient(to right, #43e97b, #38f9d7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.7rem;
+        margin-bottom: 1.2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    h1 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+}
+
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    animation: fadeInOverlay 0.4s ease;
+}
+
+@keyframes fadeInOverlay {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+
+.form-floating>.form-control:focus~label,
+.form-floating>.form-control:not(:placeholder-shown)~label,
+.form-floating>.form-select~label {
+    color: var(--primary-accent);
+    background: rgba(0, 0, 0, 0.6);
+}
+
+
+/* Enhanced Animated Select Dropdown */
+/* ================================= */
+.form-floating {
+  position: relative;
+  margin-bottom: 1.5rem;
+  
+  .form-select {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    backdrop-filter: blur(5px);
+    border: none;
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+    height: auto;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    appearance: none;
+    cursor: pointer;
+    z-index: 2;
+    
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(0, 201, 167, 0.3),
+                  0 10px 25px rgba(0, 0, 0, 0.3);
+      transform: translateY(-2px);
+      background-color: rgba(255, 255, 255, 0.25);
+      border-color: var(--primary-accent);
+    }
+    
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.25);
+      transform: translateY(-1px);
+    }
+  }
+  
+  label {
+    color: rgba(255, 255, 255, 0.7);
+    transition: all 0.3s ease;
+    z-index: 1;
+    padding: 0 0.5rem;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 4px;
+  }
+  
+  .form-select:focus ~ label,
+  .form-select:not(:placeholder-shown) ~ label {
+    transform: scale(0.85) translateY(-1.5rem) translateX(0.5rem);
+    color: var(--primary-accent);
+    background: rgba(0, 0, 0, 0.8);
+  }
+  
+  // Custom arrow
+  &::after {
+    content: "";
+    position: absolute;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid rgba(255, 255, 255, 0.7);
+    transition: all 0.3s ease;
+    pointer-events: none;
+    z-index: 3;
+  }
+  
+  .form-select:focus ~ &::after {
+    transform: translateY(-50%) rotate(180deg);
+    border-top-color: var(--primary-accent);
+  }
+  
+  // Ripple effect
+  .select-ripple {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(0, 201, 167, 0.3);
+    transform: scale(0);
+    animation: ripple 0.6s linear;
+    pointer-events: none;
+    z-index: 1;
+  }
+}
+
+// Dropdown options animation
+.form-select option {
+  background-color: #2c3e50;
+  color: white;
+  padding: 0.5rem;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    background-color: var(--primary-accent) !important;
+    transform: translateX(5px);
+  }
+}
+
+// Keyframes for animations
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Apply animation when dropdown opens
+.form-select:focus {
+  animation: slideDown 0.3s ease-out;
+}
+
+// Emoji icons for options
+.form-select option[value="cpng"]::before {
+  content: "✨ ";
+}
+
+.form-select option[value="cgray"]::before {
+  content: "🎨 ";
+}
+
+.form-select option[value="cwebp"]::before {
+  content: "🖼️ ";
+}
+
+.form-select option[value="cjpg"]::before {
+  content: "📷 ";
+}
+
+.form-select option[value="cthresh"]::before {
+  content: "⚡ ";
+}
+
+.form-select option[value="cblur"]::before {
+  content: "🌀 ";
+}
+
+.form-select option[value="csharpen"]::before {
+  content: "🔍 ";
+}
+
+.form-select option[value="crotate"]::before {
+  content: "🔄 ";
+}
+
+.form-select option[value="chflip"]::before {
+  content: "↔️ ";
+}
+
+.form-select option[value="cvflip"]::before {
+  content: "↕️ ";
+}
+
+.form-select option[value="cedges"]::before {
+  content: "🔲 ";
+}
+
+.form-select option[value="cinvert"]::before {
+  content: "🌈 ";
+}
+
+.form-select option[value="cbackgrounderase"]::before {
+  content: "✂️ ";
+}

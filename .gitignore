@@ -1,0 +1,11 @@
+*.sql
+*.db
+\__pycache__
+imgenv/
+instance/
+uploads/
+node_modules/
+processed/
+package-lock.json
+package.json
+!static/**/*.jpeg
