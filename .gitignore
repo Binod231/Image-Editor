@@ -1,11 +1,18 @@
+# Database
 *.sql
 *.db
-\__pycache__
+
+# Python
+__pycache__/
 imgenv/
 instance/
-uploads/
+
+# Node
 node_modules/
+
+# Application specific
+uploads/
 processed/
-package-lock.json
-package.json
+
+# Static files exception
 !static/**/*.jpeg
